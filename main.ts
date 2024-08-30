@@ -1,3 +1,8 @@
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite2 = sprites.create(assets.image`bullet`, SpriteKind.Projectile)
+    mySprite2.startEffect(effects.spray)
+})
+let mySprite2: Sprite = null
 tiles.setCurrentTilemap(tilemap`level0`)
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
