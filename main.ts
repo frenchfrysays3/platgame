@@ -1,8 +1,12 @@
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite2 = sprites.create(assets.image`bullet`, SpriteKind.Projectile)
-    mySprite2.startEffect(effects.spray)
+namespace SpriteKind {
+    export const Win = SpriteKind.create()
+}
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    game.gameOver(false)
 })
-let mySprite2: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    game.gameOver(true)
+})
 tiles.setCurrentTilemap(tilemap`level0`)
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
